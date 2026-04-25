@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airpods-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: airpods-app
+  template:
+    metadata:
+      labels:
+        app: airpods-app
+    spec:
+      containers:
+      - name: airpods-app
+        image: airpodsacr123.azurecr.io/airpods-site:latest
+        ports:
+        - containerPort: 80
